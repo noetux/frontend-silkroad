@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 
 
 export default function CustomNavBar() {
-  return(
+  return (
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
       <Navbar.Brand as={Link} to="/">SilkRoad</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
