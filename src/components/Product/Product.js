@@ -22,7 +22,8 @@ export default function Product({
       </Card.Body>
       <Card.Footer>
         <Card.Text>{`Price: $${price}`}</Card.Text>
-        <Card.Link as={Link} to={`/product/${id}`}>Buy</Card.Link>
+        {/* <Card.Link as={Link} to={`/product/${id}`}>Buy</Card.Link> */}
+        <Card.Link as={Link} to={`/product/${id}`}>Details</Card.Link>
       </Card.Footer>
     </Card>
   );
