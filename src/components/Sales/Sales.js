@@ -31,26 +31,18 @@ export default function Sales({ salesProducts }) {
       image={c.image}
       price="50.00"
       key={c.id}
+      showBuy={false}
     />
   });
 
-  // let products = salesProducts.map((product, i) => {
-  //   return <Product
-  //     id={product.id}
-  //     title={product.title}
-  //     details={product.details}
-  //     image={product.image}
-  //     price={product.price}
-  //     key={product.id}
-  //   />;
-  // });
-
   return (
     <Container fluid>
-      <Row>
+      <Row style={{
+        display: 'flex',
+        justifyContent: 'center',
+      }}>
         {productsCards}
       </Row>
     </Container>
   );
-
 }

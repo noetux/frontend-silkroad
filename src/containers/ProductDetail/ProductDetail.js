@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Product from '../../components/Product/Product';
 import { temporalDB } from '../../temporalData/teporalDB';
 import axios from '../../axios';
@@ -32,13 +34,19 @@ export default function ProductDetail(props) {
       details={product.details}
       image={product.image}
       price={product.price}
+      showBuy={true}
     />
   }
 
   return (
-    <>
+    <Container fluid>
+    <Row style={{
+      display: 'flex',
+      justifyContent: 'center',
+    }}>
       {objectInfo}
-    </>
+    </Row>
+  </Container>
   );
 
 }

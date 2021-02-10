@@ -15,6 +15,7 @@ export default function CustomNavBar() {
           <Nav.Link as={Link} to="/about">About</Nav.Link>
         </Nav>
         <Nav>
+          <Nav.Link  as={Link} to="/cart">Cart</Nav.Link>
           <Nav.Link>Log out</Nav.Link>
         </Nav>
       </Navbar.Collapse>

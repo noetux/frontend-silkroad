@@ -6,6 +6,7 @@ import About from '../components/about/About';
 import Products from '../components/products/Products';
 import NotFound from '../components/NotFound/NotFound';
 import ProductDetail from './ProductDetail/ProductDetail';
+import Cart from '../components/cart/Cart';
 
 export default function Layout() {
   return (
@@ -17,6 +18,7 @@ export default function Layout() {
           <Route path="/about" component={About}/>
           <Route path="/products" component={Products}/>
           <Route path="/product/:productId" component={ProductDetail}/>
+          <Route path="/cart" component={Cart}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </Router>

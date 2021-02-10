@@ -5,7 +5,7 @@ import Sales from '../Sales/Sales';
 export default function Dashboard() {
   return (
     <>
-      <h1 className="text-center my-2">Dashboard</h1>
+      <h1 className="text-center my-2">New Offers</h1>
       <Sales salesProducts={temporalDB} />
     </>
   );
