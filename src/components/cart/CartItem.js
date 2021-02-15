@@ -22,7 +22,7 @@ export default function CartItem({
       </Card.Body>
       <Card.Footer>
         <Card.Text>{`Quantity: ${quantity}`}</Card.Text>
-        <Card.Text>{`Price: $${price}`}</Card.Text>
+        <Card.Text>{`Unit Price: $${price}`}</Card.Text>
         <Card.Text>{`Total: $${price * quantity}`}</Card.Text>
       </Card.Footer>
     </Card>

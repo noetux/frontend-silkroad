@@ -10,8 +10,17 @@ export default function Sales({ salesProducts }) {
     products: []
   });
 
+  /*const headers = {
+    'Content-Type': 'text/plain'
+  }*/
+
   useEffect(() => {
-    axios.get('/character')
+    axios.get('/character'/*, {
+      withCredentials: false,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      }
+    }*/)
       .then(response => {
         let charactersInfo = response.data.results;
         charactersInfo = charactersInfo.map(character => ({
@@ -29,6 +38,7 @@ export default function Sales({ salesProducts }) {
       title={c.name}
       details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a dui sollicitudin, porttitor dolor eu, consectetur urna. Sed sit amet elementum nulla. Vestibulum vel erat lorem."
       image={c.image}
+      //product={c}
       price="50.00"
       key={c.id}
       showBuy={false}

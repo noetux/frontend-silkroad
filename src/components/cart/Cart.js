@@ -8,25 +8,24 @@ export default function Cart() {
 
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    let cartItems = localStorage.getItem('cartItems') || [];
+  const fillCart = async () => {
+    let cartItems = localStorage.getItem('cartItems') || {};
     cartItems = typeof cartItems === 'string' ? JSON.parse(cartItems) : cartItems;
-    cartItems.forEach((e, i) => {
+    for (var [key, value] of Object.entries(cartItems)) {
+      let response = await axios.get(`/character/${key}`);
+      setItems (i => [...i, <CartItem
+        id = {key}
+        title = {response.data.name}
+        image = {response.data.image}
+        price = "50.00"
+        quantity = {value}
+        key = {key}
+      />]);
+    }
+  }
 
-      console.log(`buscando el ${e}`);
-
-      axios.get(`/character/${e}`).then(response => {
-        setItems (i => [...i, <CartItem
-          id = {e}
-          title = {response.data.name}
-          image = {response.data.image}
-          price = "50.00"
-          quantity = {1}
-          key = {e}
-        />]);
-      });
-    });
-    //setItems(cartItems);
+  useEffect(() => {
+    fillCart();
   }, []);
 
   return (
