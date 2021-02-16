@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import axios from '../../axios';
-import CartItem from './CartItem';
+import ProductDetails from '../Product/ProductDetails';
 
 export default function Cart() {
 
@@ -13,13 +13,12 @@ export default function Cart() {
     cartItems = typeof cartItems === 'string' ? JSON.parse(cartItems) : cartItems;
     for (var [key, value] of Object.entries(cartItems)) {
       let response = await axios.get(`/character/${key}`);
-      setItems (i => [...i, <CartItem
-        id = {key}
-        title = {response.data.name}
-        image = {response.data.image}
-        price = "50.00"
-        quantity = {value}
-        key = {key}
+      setItems (i => [...i, <ProductDetails
+        id={key}
+        title={response.data.name}
+        image={response.data.image}
+        price="50.00"
+        showDetails={false}
       />]);
     }
   }

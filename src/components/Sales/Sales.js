@@ -38,7 +38,6 @@ export default function Sales({ salesProducts }) {
       title={c.name}
       details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a dui sollicitudin, porttitor dolor eu, consectetur urna. Sed sit amet elementum nulla. Vestibulum vel erat lorem."
       image={c.image}
-      //product={c}
       price="50.00"
       key={c.id}
       showBuy={false}

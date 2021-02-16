@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Product from '../../components/Product/Product';
-//import { temporalDB } from '../../temporalData/teporalDB';
 import axios from '../../axios';
+import ProductDetails from '../../components/Product/ProductDetails';
 
 export default function ProductDetail(props) {
   const productId = +props.match.params.productId;
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    // const foundProduct = (temporalDB.filter(p => p.id === productId))[0] || {};
-    // setProduct({...foundProduct});
     axios.get(`/character/${productId}`).then(response => {
       setProduct({
         key: response.data.id,
@@ -27,14 +24,14 @@ export default function ProductDetail(props) {
 
   let objectInfo = <div style={{textAlign: "center"}}><h1>Product not found...</h1></div>;
   if (Object.entries(product).length !== 0) {
-    objectInfo = <Product
-      key={product.key}
+    objectInfo = <ProductDetails
       id={product.id}
       title={product.title}
-      details={product.details}
+      description={product.details}
+      details={['detail 1', 'detail 2', 'detail 3']}
       image={product.image}
       price={product.price}
-      showBuy={true}
+      showDetails={true}
     />
   }
 
