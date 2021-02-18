@@ -1,0 +1,9 @@
+.card {
+  width: 18rem;
+  text-align: center;
+}
+
+.title {
+  text-decoration: inherit;
+  color: inherit;
+}

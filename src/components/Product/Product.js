@@ -1,3 +1,4 @@
+import classes from './Product.module.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
@@ -14,11 +15,10 @@ export default function Product({
     <Card
       bg="dark"
       text="white"
-      style={{width: '18rem', textAlign: 'center'}}
-      className="my-2 mx-2"
+      className={`my-2 mx-2 ${classes.card}`}
     >
       <Card.Header>
-        <Link to={`/product/${id}`} style={{ textDecoration: 'inherit', color: 'inherit' }}>{title}</Link>
+        <Link to={`/product/${id}`} className={classes.title}>{title}</Link>
       </Card.Header>
       <Card.Body>
         <Link to={`/product/${id}`}>

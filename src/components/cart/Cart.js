@@ -1,3 +1,4 @@
+import classes from './Cart.module.css';
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -31,10 +32,7 @@ export default function Cart() {
     <>
       <h1 className="text-center my-2">Cart</h1>
       <Container>
-        <Row style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}>
+        <Row className={classes.cart}>
           {items}
         </Row>
       </Container>

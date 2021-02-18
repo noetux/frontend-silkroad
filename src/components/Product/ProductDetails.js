@@ -1,3 +1,4 @@
+import classes from './ProductDetails.module.css';
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
@@ -50,18 +51,11 @@ export default function ProductDetail({
       text="white"
       className="my-2 mx-2"
     >
-      <Card.Header style={{textAlign: 'center'}}>{title}</Card.Header>
-      <Card.Body style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center'
-      }}>
+      <Card.Header className={classes.title}>{title}</Card.Header>
+      <Card.Body className={classes.cardBody}>
       <Image src={image} height='150px' className="my-3 mx-3" />
         {showDetails ?
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
+          <div className={classes.description}>
             <Card.Text>{description}</Card.Text>
             <ul>
               {details.map((d, i) => <li>{d}</li>)}
@@ -69,7 +63,7 @@ export default function ProductDetail({
           </div>
         : null}
       </Card.Body>
-      <Card.Footer style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+      <Card.Footer className={classes.footer}>
         <Card.Text>{`Unit price: $${price}`}</Card.Text>
         <div className="w-25">
           <Form.Control
